@@ -21,3 +21,14 @@ class Triangle extends Polygon {
     return (a + b > c) && (b + c > a) && (a + c > b);
   }
 }
+
+class Square extends Polygon {
+  get isValid (){
+    if (this.count !== 4) return false
+    const [a,b,c,d] = this.sides;
+    return (a===b) && (b===c) && (c===d)
+  }
+  get area (){
+   return this.sides[0] ** 2
+  }
+}
